@@ -24,58 +24,61 @@ const App = () => {
             })
         });
 
-        auth().onAuthStateChanged(async user => {
-            if (user) {
-                const userDoc = await firechat.usersRef!.doc(user.uid).get()
-                if (userDoc.exists) {
-                    firechat.user = {
-                        ...userDoc.data() as User,
-                        id: userDoc.id
-                    }
-
-                    dispatch({
-                        type: ActionType.ChangeScreen,
-                        screen: Screen.Rooms
-                    })
-
-                }  else {
-                    dispatch({
-                        type: ActionType.ChangeScreen,
-                        screen: Screen.SignUp
-                    })
-                }
-                    //await firechat.updateUserLocation(state.position.coords.latitude, state.position.coords.longitude)
-
-            } else {
-                dispatch({
-                    type: ActionType.ChangeScreen,
-                    screen: Screen.Login
-                })
-
-                firechat.user = undefined
+        firechat.usersRef!.doc("sZYgdXOufvYGae3WaXVy95aE2zl1").get().then(user => {
+            firechat.user = {
+                ...user.data() as User,
+               id: user.id
             }
+
+            dispatch({
+                type: ActionType.ChangeScreen,
+                screen: Screen.Rooms
+            })
         })
+  
+        
+        // auth().onAuthStateChanged(async user => {
+        //     if (user) {
+        //         const userDoc = await firechat.usersRef!.doc(user.uid).get()
+        //         if (userDoc.exists) {
+        //             firechat.user = {
+        //                 ...userDoc.data() as User,
+        //                 id: userDoc.id
+        //             }
+
+        //             dispatch({
+        //                 type: ActionType.ChangeScreen,
+        //                 screen: Screen.Rooms
+        //             })
+
+        //         }  else {
+        //             dispatch({
+        //                 type: ActionType.ChangeScreen,
+        //                 screen: Screen.SignUp
+        //             })
+        //         }
+        //             //await firechat.updateUserLocation(state.position.coords.latitude, state.position.coords.longitude)
+
+        //     } else {
+        //         dispatch({
+        //             type: ActionType.ChangeScreen,
+        //             screen: Screen.Login
+        //         })
+
+        //         firechat.user = undefined
+        //     }
+        // })
     }, [])
 
-    let view = null;
     if (state.screen == Screen.Rooms)
-        view = <ConversationList/>
+        return <ConversationList/>
     else if (state.screen == Screen.Login)
         return <Login/>
     else if (state.screen  == Screen.Main)
-        view = <Main/>
+        return <Main/>
     else if (state.screen == Screen.Room)
-        view = <Chat/>
-    return (
-        <View>
-            {firechat && <Button
-                label={'Small'}
-                size={Button.sizes.small}
-                onPress={firechat.signOut}
-            />}
-            {view}
-        </View>
-    )
+        return <Chat/>
+    return null
 }
 
 export default () => (

@@ -25,19 +25,17 @@ class Firechat {
             throw new Error("not logged");
         }
         
-        if (roomId) {
-            for (const message of messages) {
-                const msg: Message = {
-                    ...message,
-                    uid: this.user.id,
-                    createdAt: this.getServerTimestamp(),
-                }
-                this.roomsRef.doc(roomId).collection("messages").add(msg)
-                if (message.image || message.location)
-                    this.updateRoom(roomId, "[Anexo]")
-                else
-                    this.updateRoom(roomId, message.text)
+        for (const message of messages) {
+            const msg: Message = {
+                ...message,
+                uid: this.user.id,
+                createdAt: this.getServerTimestamp(),
             }
+            this.roomsRef.doc(roomId).collection("messages").add(msg)
+            if (message.image || message.location)
+                this.updateRoom(roomId, "[Anexo]")
+            else
+                this.updateRoom(roomId, message.text)
         }
     }
 
