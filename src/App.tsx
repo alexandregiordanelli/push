@@ -43,11 +43,6 @@ const App = () => {
                         screen: Screen.Rooms
                     })
                 } else {
-                    dispatch({
-                        type: ActionType.ChangeScreen,
-                        screen: Screen.SignUp
-                    })
-                    
                     const location = new firebase.firestore.GeoPoint(1, 1)
         
                     const userEntity: User = {
@@ -59,6 +54,11 @@ const App = () => {
                     }
                     await firechat.usersRef!.doc(user.uid).set(userEntity)
                     firechat.user = userEntity
+
+                    dispatch({
+                        type: ActionType.ChangeScreen,
+                        screen: Screen.Rooms
+                    })
                 }
             } else {
                 dispatch({
