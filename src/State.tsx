@@ -1,9 +1,9 @@
 import React, {createContext, useContext, useReducer, PropsWithChildren} from 'react';
 import { MainState, MainAction, ActionType, Screen, initialState } from './Models';
 
-type Teste = [MainState, React.Dispatch<MainAction>]
+type MainContext = [MainState, React.Dispatch<MainAction>]
 
-export const StateContext = createContext<Teste>({} as Teste);
+export const StateContext = createContext<MainContext>({} as MainContext);
 
 function reducer(state: MainState, action: MainAction) {
     switch (action.type) {

@@ -179,7 +179,7 @@ class Firechat {
         cb(rooms)
     }
 
-    getMessages(roomId: string, cursor: Cursor) {
+    getMessages(roomId: string, cursor?: Cursor) {
         return this.roomsRef
             .doc(roomId)
             .collection("messages")
@@ -228,10 +228,12 @@ class Firechat {
             this.updateRoom(roomId)
         })
 
+        const cursor = messages.length == this.nMax ?
+            querySnapshot.docs[querySnapshot.docs.length - 1].get("createdAt") as FirebaseFirestoreTypes.Timestamp : undefined
+
         const position: MessageListCursor = {
             messages,
-            cursor: messages.length == this.nMax ?
-                querySnapshot.docs[querySnapshot.docs.length - 1].get("createdAt") : null
+            cursor
         }
 
         if (cb)
