@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1013531303372-540da9kbcfa7ap8ia7ajoeo0u2qtovai.apps.googleusercontent.com</string>
+	<string>285163780198-7hf4hg7n1mhjop3n43vruqplpe15e629.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1013531303372-540da9kbcfa7ap8ia7ajoeo0u2qtovai</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>1013531303372-8f6pf5qt13u3uqeattcfnbvvs04p8jhi.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.285163780198-7hf4hg7n1mhjop3n43vruqplpe15e629</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA3Rhkcscvdf_5ovK5162IMj4_P7ri8Wsk</string>
+	<string>AIzaSyDIA9nipESrPfEB2HkLTgVaQrzuio4CVv0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1013531303372</string>
+	<string>285163780198</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.candy</string>
+	<string>com.push</string>
 	<key>PROJECT_ID</key>
-	<string>lunericandy</string>
+	<string>push09</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lunericandy.appspot.com</string>
+	<string>push09.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1013531303372:ios:e1c5be8174192bedd15169</string>
+	<string>1:285163780198:ios:ac872069d1b87b74a715a7</string>
 	<key>DATABASE_URL</key>
-	<string>https://lunericandy.firebaseio.com</string>
+	<string>https://push09.firebaseio.com</string>
 </dict>
 </plist>

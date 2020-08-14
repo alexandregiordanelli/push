@@ -10,6 +10,8 @@ import { StateProvider, useStateValue } from "./State";
 
 import auth from '@react-native-firebase/auth';
 import Login from "./Login";
+import { encodeGeohash } from "./Geofire";
+import { firebase } from "@react-native-firebase/firestore";
 
 // YellowBox.ignoreWarnings(['Setting a timer']);
 
@@ -46,17 +48,17 @@ const App = () => {
                         screen: Screen.SignUp
                     })
                     
-                    // const location = new firebase.firestore.GeoPoint(initialLocation.coords.latitude, initialLocation.coords.longitude)
+                    const location = new firebase.firestore.GeoPoint(1, 1)
         
-                    // const userEntity: User = {
-                    //     avatar: user.photoURL ?? undefined,
-                    //     name: user.displayName ?? undefined,
-                    //     id: user.uid,
-                    //     geohash: encodeGeohash([location.latitude, location.longitude]),
-                    //     location
-                    // }
-                    // await firechat.userRef!.doc(user.uid).set(userEntity)
-                    // firechat.user = userEntity
+                    const userEntity: User = {
+                        //avatar: user.photoURL ?? undefined,
+                        //name: user.displayName ?? undefined,
+                        id: user.uid,
+                        geohash: encodeGeohash([location.latitude, location.longitude]),
+                        location
+                    }
+                    await firechat.usersRef!.doc(user.uid).set(userEntity)
+                    firechat.user = userEntity
                 }
             } else {
                 dispatch({
