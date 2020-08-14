@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList } from 'react-native';
 import { ContactItem } from './ContactItem';
-import { firechat } from './Firechat';
+import { firechat } from './lib/Firechat';
 import { Room } from './Models';
 import MessageItem from './MessageItem';
 

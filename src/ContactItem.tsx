@@ -5,7 +5,7 @@ import moment from 'moment'
 import 'moment/locale/pt-br'
 import { ActionType, Room } from './Models';
 import { useStateValue } from './State';
-import { firechat } from './Firechat';
+import { firechat } from './lib/Firechat';
 
 const renderTime = (timestamp: Date) => {
     const a = moment(timestamp)

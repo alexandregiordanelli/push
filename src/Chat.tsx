@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { firechat } from './Firechat'
+import { firechat } from './lib/Firechat'
 
 import {
     Text,

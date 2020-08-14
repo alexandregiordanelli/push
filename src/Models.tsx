@@ -1,3 +1,7 @@
+import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
+import { GeoDocument } from "./lib/Geofire";
+import { GeolocationResponse } from "@react-native-community/geolocation";
+
 export enum Screen {
     Login,
     Rooms,
@@ -9,6 +13,7 @@ export enum Screen {
 export type MainState = {
     screen: Screen;
     roomId?: string;
+    position?: GeolocationResponse
 };
 
 export const initialState: MainState = {
@@ -25,10 +30,10 @@ export type MainAction = {
     type: ActionType;
     screen?: Screen;
     roomId?: string;
-    position?: any;
+    position?: GeolocationResponse;
 };
 
-export type Cursor = firebase.firestore.Timestamp | null
+export type Cursor = FirebaseFirestoreTypes.Timestamp | null
 
 export type MessageListCursor = {
     messages: Message[]
@@ -36,7 +41,7 @@ export type MessageListCursor = {
 }
 
 export type Message = {
-    createdAt: firebase.firestore.Timestamp
+    createdAt: FirebaseFirestoreTypes.Timestamp
     received: boolean
     text: string
     uid: string
@@ -48,20 +53,17 @@ export type Message = {
 export type Room = {
     id?: string
     anotherUser?: User
-    createdAt: firebase.firestore.Timestamp
+    createdAt: FirebaseFirestoreTypes.Timestamp
     lastMessage: string
     notifications: {
         [key: string]: number
     }
-    updatedAt: firebase.firestore.Timestamp
+    updatedAt: FirebaseFirestoreTypes.Timestamp
     users: {
         [key: string]: boolean
     }
 }
 export type User = {
-    id: string
     name?: string
     avatar?: string
-    location: firebase.firestore.GeoPoint
-    geohash: string
-}
+} & GeoDocument

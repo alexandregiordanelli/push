@@ -165,23 +165,30 @@ const removeDuplicates = (array: any[], prop: string) => array.filter((obj, pos,
 
 const sortByDistance = (array: any[]) => array.sort((a, b) => ((a.distance < b.distance) ? -1 : ((a.distance > b.distance) ? 1 : 0)))
 
-const getDocumentsNearby = (ref: FirebaseFirestoreTypes.CollectionReference, center: number[], radius: number) => {
-    let docs: any[] = []
+export interface GeoDocument {
+    id: string
+    distance?: number
+    location: FirebaseFirestoreTypes.GeoPoint
+    geohash: string
+}
+
+const getDocumentsNearby = <T extends GeoDocument>(ref: FirebaseFirestoreTypes.CollectionReference, center: number[], radiusInMeters: number) => {
+    let docs: T[] = []
     const promises: Promise<boolean>[] = []
-    getQueriesForDocumentsAround(ref, center, radius).forEach(query => {
+    getQueriesForDocumentsAround(ref, center, radiusInMeters).forEach(query => {
         promises.push(query.get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
-                let data = doc.data()
+                let data = doc.data() as T
                 data.distance = Math.round(1000 * distance(center, [data.location.latitude,data.location.longitude]))
                 data.id = doc.id
-                if(data.distance < radius)
+                if(data.distance < radiusInMeters)
                     docs.push(data)
             })
             return true
         }))
     })
     return Promise.all(promises).then(e => {
-        return sortByDistance(removeDuplicates(docs, "id"))
+        return sortByDistance(removeDuplicates(docs, "id")) as T[]
     })
 }
 

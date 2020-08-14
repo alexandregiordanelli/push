@@ -1,12 +1,11 @@
 import { getDocumentsNearby, encodeGeohash } from './Geofire';
-import { Message, Room, User, Cursor, MessageListCursor } from './Models';
+import { Message, Room, User, Cursor, MessageListCursor } from '../Models';
 import { firebase, FirebaseFirestoreTypes } from '@react-native-firebase/firestore';
 
 
 class Firechat {
     nMax = 40
     user?: User
-    userLogged = false
     db: FirebaseFirestoreTypes.Module
     roomsRef: FirebaseFirestoreTypes.CollectionReference;
     usersRef: FirebaseFirestoreTypes.CollectionReference;
@@ -256,7 +255,8 @@ class Firechat {
         if(!this.user){
             throw new Error("not logged");
         }
-        return getDocumentsNearby(this.usersRef, [this.user.location.latitude, this.user.location.longitude], radius)
+        console.log(this.user.location)
+        return getDocumentsNearby<User>(this.usersRef, [this.user.location.latitude, this.user.location.longitude], radius)
     }
 
     async updateUserLocation(latitude: number, longitude: number) {
