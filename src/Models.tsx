@@ -48,6 +48,7 @@ export type Message = {
     image: string
     location: string
     sent: boolean
+    id?: string
 }
 
 export type Room = {

@@ -4,7 +4,7 @@ import { firebase, FirebaseFirestoreTypes } from '@react-native-firebase/firesto
 
 
 class Firechat {
-    nMax = 40
+    nMax = 10
     user?: User
     db: FirebaseFirestoreTypes.Module
     roomsRef: FirebaseFirestoreTypes.CollectionReference;
@@ -180,11 +180,12 @@ class Firechat {
     }
 
     getMessages(roomId: string, cursor?: Cursor) {
+        console.log("getMessages", cursor)
         return this.roomsRef
             .doc(roomId)
             .collection("messages")
             .orderBy("createdAt", "desc")
-            .startAfter(cursor)
+            .startAfter(cursor ?? null)
             .limit(this.nMax)
             .get()
             .then(querySnapshot =>
@@ -198,8 +199,10 @@ class Firechat {
             .collection("messages")
             .orderBy("createdAt", "desc")
             .limit(this.nMax)
-            .onSnapshot(querySnapshot =>
+            .onSnapshot(querySnapshot =>{
+                console.log(1)
                 this.parseMessages(querySnapshot, roomId, cb)
+            }
             )
     }
 
@@ -215,6 +218,7 @@ class Firechat {
             const data = doc.data() as Message
             const message: Message = {
                 ...data,
+                id: doc.id,
                 createdAt: data.createdAt || firebase.firestore.Timestamp.now(),
                 sent
             }
@@ -229,17 +233,16 @@ class Firechat {
         })
 
         const cursor = messages.length == this.nMax ?
-            querySnapshot.docs[querySnapshot.docs.length - 1].get("createdAt") as FirebaseFirestoreTypes.Timestamp : undefined
+            querySnapshot.docs[querySnapshot.docs.length - 1].get("createdAt") as FirebaseFirestoreTypes.Timestamp : null
 
-        const position: MessageListCursor = {
+        const _position: MessageListCursor = {
             messages,
             cursor
         }
 
         if (cb)
-            cb(position)
-        else
-            return position
+            cb(_position)
+        return _position
     }
 
     updateUser(user: User){

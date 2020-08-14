@@ -17,8 +17,9 @@ import moment from 'moment'
 import "moment/locale/pt-br"
 
 import { useStateValue } from './State';
-import { Message, Cursor } from './Models'
+import { Message, Cursor, MessageListCursor } from './Models'
 import { Keyboard } from 'react-native-ui-lib'
+import { firebase } from '@react-native-firebase/auth'
 
 
 type SectionMessage = {
@@ -38,51 +39,66 @@ const KeyboardAccessoryViewContent = ({ roomId }: { roomId: string }) => {
 
     return (
         // <InputAccessoryView >
-            <View style={styles.inputContainer}>
-                <TextInput style={styles.textInput} multiline={true} onChangeText={text => setMsgText(text)} value={msgText} />
-                <TouchableOpacity style={styles.sendButton} onPress={async () => await onSend([{ text: msgText } as Message])}>
-                    <Text>Enviar</Text>
-                </TouchableOpacity>
-            </View>
+        <View style={styles.inputContainer}>
+            <TextInput style={styles.textInput} multiline={true} onChangeText={text => setMsgText(text)} value={msgText} />
+            <TouchableOpacity style={styles.sendButton} onPress={async () => await onSend([{ text: msgText } as Message])}>
+                <Text>Enviar</Text>
+            </TouchableOpacity>
+        </View>
         // </InputAccessoryView>
     )
 }
 
 export default () => {
-    const cursor: Cursor = null
     const offset = 44 + 20
+
+    const initMessageListCursor: MessageListCursor = {
+        cursor: firebase.firestore.Timestamp.now(),
+        messages: []
+    }
 
     const [messageList, setMessageList] = useState<Message[]>([])
     const [sessionMessageList, setSessionMessageList] = useState<SectionMessage[]>([])
-    const [loadEarlier, setLoadEarlier] = useState(false)
-    const [isLoadingEarlier, setIsLoadingEarlier] = useState(false)
-
+    const [position, setPosition] = useState(initMessageListCursor)
+    const [endOfChat, setEndOfChat] = useState(false)
     const [state] = useStateValue();
 
     const { roomId } = state
 
+
     useEffect(() => {
-        console.log(state)
         if (!roomId) return
 
-        const unsubscribe = firechat.getOnMessages(roomId, (position) => {
-            //const newMessages = messages.concat(this.state.messages)
-            storeMessages(position.messages, position.cursor)
+        const unsubscribe = firechat.getOnMessages(roomId, (_position: MessageListCursor) => {
+            setPosition(_position)
         })
 
         return () => {
             if (unsubscribe)
                 unsubscribe()
         }
-    }, [roomId])
+    }, [])
+
+    useEffect(() => {
+        const filteredPositionMessages = position.messages.filter(y => !(messageList.length > 0 && messageList.some(x => x.id == y.id)))
+        const newMsgList = messageList.concat(filteredPositionMessages).sort((a, b) => a.createdAt > b.createdAt ? -1 : a < b ? 1 : 0)
+        setMessageList(newMsgList)
+        setSessionMessageList(splitToSections(newMsgList))
+        if (!position.cursor) {
+            setEndOfChat(true)
+        }
+    }, [position, endOfChat])
 
 
     const onLoadEarlier = async () => {
-        setIsLoadingEarlier(true)
-        const position = await firechat.getMessages(roomId!, cursor)
-        if (position) {
-            const newMessages = position.messages.concat(messageList)
-            storeMessages(newMessages, position.cursor)
+        if (position.cursor && !endOfChat) {
+            const _position = await firechat.getMessages(roomId!, position.cursor)
+            setPosition(_position)
+        } else if (position.cursor) {
+            setPosition({
+                ...initMessageListCursor,
+                cursor: null
+            })
         }
     }
 
@@ -109,24 +125,15 @@ export default () => {
         return sectionListData
     }
 
-    const storeMessages = (messages: Message[], cursor: Cursor) => {
-        let loadEarlier = false
-        if (cursor)
-            loadEarlier = true
-        setMessageList(messages)
-        setSessionMessageList(splitToSections(messages))
-        setLoadEarlier(loadEarlier)
-        setIsLoadingEarlier(false)
-        cursor = null
-    }
-
     return (
         <React.Fragment>
 
             <SectionList<Message>
-                style={{backgroundColor: '#eee'}}
+                style={{ backgroundColor: '#eee' }}
                 inverted={true}
+
                 onEndReached={onLoadEarlier}
+                onEndReachedThreshold={0.3}
                 // contentInset={{ bottom: offset }}
                 keyboardDismissMode='interactive'
                 renderSectionFooter={({ section }) => {
@@ -154,7 +161,7 @@ export default () => {
                     )
                 }} />
 
-            
+
 
             <Keyboard.KeyboardAccessoryView
                 renderContent={() => <KeyboardAccessoryViewContent roomId={roomId!} />}
