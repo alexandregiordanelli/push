@@ -7,16 +7,10 @@ export const StateContext = createContext<MainContext>({} as MainContext);
 
 function reducer(state: MainState, action: MainAction) {
     switch (action.type) {
-        case ActionType.ChangeRoom: {
-            return {
-                ...state,
-                roomId: action.roomId,
-                screen: Screen.Room
-            } as MainState
-        }
         case ActionType.ChangeScreen:
             return {
                 ...state,
+                room: action.room,
                 screen: action.screen!
             } as MainState
         case ActionType.ChangeLocation:

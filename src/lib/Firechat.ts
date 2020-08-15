@@ -4,7 +4,7 @@ import { firebase, FirebaseFirestoreTypes } from '@react-native-firebase/firesto
 
 
 class Firechat {
-    nMax = 10
+    nMax = 20
     user?: User
     db: FirebaseFirestoreTypes.Module
     roomsRef: FirebaseFirestoreTypes.CollectionReference;

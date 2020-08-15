@@ -13,6 +13,7 @@ import Login from "./Login";
 import Main from "./Main";
 import Geolocation from '@react-native-community/geolocation';
 
+
 const App = () => {
     const [state, dispatch] = useStateValue();
 

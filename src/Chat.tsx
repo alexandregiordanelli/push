@@ -4,23 +4,23 @@ import { firechat } from './lib/Firechat'
 import {
     Text,
     SectionList,
-    View,
     StyleSheet,
-    Platform,
     TouchableOpacity,
     PixelRatio,
-    InputAccessoryView,
     TextInput,
+    SafeAreaView,
+    Alert,
 } from 'react-native'
 
 import moment from 'moment'
 import "moment/locale/pt-br"
 
 import { useStateValue } from './State';
-import { Message, Cursor, MessageListCursor } from './Models'
-import { Keyboard } from 'react-native-ui-lib'
+import { Message, MessageListCursor, ActionType, Screen } from './Models'
+import { Keyboard, View, ConnectionStatusBar, Colors, Modal } from 'react-native-ui-lib'
 import { firebase } from '@react-native-firebase/auth'
 
+const offset = 20 + 44
 
 type SectionMessage = {
     title: string,
@@ -38,20 +38,16 @@ const KeyboardAccessoryViewContent = ({ roomId }: { roomId: string }) => {
     }
 
     return (
-        // <InputAccessoryView >
         <View style={styles.inputContainer}>
             <TextInput style={styles.textInput} multiline={true} onChangeText={text => setMsgText(text)} value={msgText} />
             <TouchableOpacity style={styles.sendButton} onPress={async () => await onSend([{ text: msgText } as Message])}>
                 <Text>Enviar</Text>
             </TouchableOpacity>
         </View>
-        // </InputAccessoryView>
     )
 }
 
 export default () => {
-    const offset = 44 + 20
-
     const initMessageListCursor: MessageListCursor = {
         cursor: firebase.firestore.Timestamp.now(),
         messages: []
@@ -61,15 +57,15 @@ export default () => {
     const [sessionMessageList, setSessionMessageList] = useState<SectionMessage[]>([])
     const [position, setPosition] = useState(initMessageListCursor)
     const [endOfChat, setEndOfChat] = useState(false)
-    const [state] = useStateValue();
+    const [state, dispatch] = useStateValue();
 
-    const { roomId } = state
+    const { room } = state
 
 
     useEffect(() => {
-        if (!roomId) return
+        if (!room?.id) return
 
-        const unsubscribe = firechat.getOnMessages(roomId, (_position: MessageListCursor) => {
+        const unsubscribe = firechat.getOnMessages(room.id, (_position: MessageListCursor) => {
             setPosition(_position)
         })
 
@@ -92,7 +88,7 @@ export default () => {
 
     const onLoadEarlier = async () => {
         if (position.cursor && !endOfChat) {
-            const _position = await firechat.getMessages(roomId!, position.cursor)
+            const _position = await firechat.getMessages(room!.id!, position.cursor)
             setPosition(_position)
         } else if (position.cursor) {
             setPosition({
@@ -126,14 +122,23 @@ export default () => {
     }
 
     return (
-        <React.Fragment>
-
+        <>
+            {/* <View useSafeArea/> */}
+            <Modal.TopBar
+                title={firechat.getAnotherUid(room!)}
+                onCancel={() => dispatch({
+                    type: ActionType.ChangeScreen,
+                    screen: Screen.Rooms,
+                    room: undefined
+                })}
+                cancelButtonProps={{ iconStyle: { tintColor: Colors.orange30 } }}
+            />
+            {/* <SafeAreaView> */}
             <SectionList<Message>
-                style={{ backgroundColor: '#eee' }}
                 inverted={true}
-
+                // contentInsetAdjustmentBehavior='scrollableAxes'
                 onEndReached={onLoadEarlier}
-                onEndReachedThreshold={0.3}
+                // onEndReachedThreshold={0.5}
                 // contentInset={{ bottom: offset }}
                 keyboardDismissMode='interactive'
                 renderSectionFooter={({ section }) => {
@@ -160,18 +165,16 @@ export default () => {
                         </View>
                     )
                 }} />
-
-
-
+            <View useSafeArea />
+            {/* </SafeAreaView> */}
             <Keyboard.KeyboardAccessoryView
-                renderContent={() => <KeyboardAccessoryViewContent roomId={roomId!} />}
+                renderContent={() => <KeyboardAccessoryViewContent roomId={room?.id!} />}
                 trackInteractive={true}
                 requiresSameParentToManageScrollView={true}
                 scrollIsInverted={true}
                 revealKeyboardInteractive={false}
             />
-
-        </React.Fragment>
+        </>
     )
 }
 
@@ -186,7 +189,7 @@ const styles = StyleSheet.create({
     container: {
         width: 100,
         borderRadius: 18,
-        backgroundColor: '#eee',
+        // backgroundColor: '#eee',
         alignSelf: 'center',
         marginTop: 8
     },
@@ -198,11 +201,11 @@ const styles = StyleSheet.create({
     },
     left: {
         alignSelf: 'flex-start',
-        backgroundColor: '#222',
+        backgroundColor: '#eee',
     },
     right: {
         alignSelf: 'flex-end',
-        backgroundColor: '#fc6157',
+        backgroundColor: Colors.yellow50,
     },
     bubble: {
         flexDirection: 'row',
@@ -223,6 +226,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        backgroundColor: 'white'
     },
     textInput: {
         flex: 1,
@@ -233,7 +237,7 @@ const styles = StyleSheet.create({
         paddingTop: 2,
         paddingBottom: 5,
         fontSize: 16,
-        backgroundColor: 'gray',
+        // backgroundColor: 'gray',
         // backgroundColor: '#666',
         borderWidth: 0.5 / PixelRatio.get(),
         borderRadius: 18,

@@ -12,7 +12,7 @@ export enum Screen {
 
 export type MainState = {
     screen: Screen;
-    roomId?: string;
+    room?: Room;
     position?: GeolocationResponse
 };
 
@@ -22,14 +22,13 @@ export const initialState: MainState = {
 
 export enum ActionType {
     ChangeScreen,
-    ChangeRoom,
     ChangeLocation
 }
 
 export type MainAction = {
     type: ActionType;
     screen?: Screen;
-    roomId?: string;
+    room?: Room;
     position?: GeolocationResponse;
 };
 
