@@ -39,13 +39,13 @@ export const ContactItem = ({room}: ContactItemProps) => {
                 })
             }}
         >
-            <ListItem.Part left>
+            <ListItem.Part left bg-blue80>
                 <Avatar
                     size={54}
                     label={AvatarHelper.getInitials(room.anotherUser?.name ?? "Alexandre Giordanelli")}
                     containerStyle={styles.avatar} />
             </ListItem.Part>
-            <ListItem.Part middle column containerStyle={styles.border}>
+            <ListItem.Part middle column containerStyle={styles.border} bg-blue80>
                 <ListItem.Part containerStyle={styles.middle}>
                     <Text style={styles.text} text70 color={Colors.dark10} numberOfLines={1}>{room.anotherUser?.name ?? "Alexandre Giordanelli"}</Text>
                     <Text style={styles.subtitle} text90 color={Colors.dark50}>{renderTime(room.updatedAt.toDate())}</Text>

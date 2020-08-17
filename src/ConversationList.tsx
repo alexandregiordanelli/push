@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList, StyleSheet, Alert, ImageURISource } from 'react-native';
+import { FlatList, StyleSheet, Alert, ImageURISource, StatusBar } from 'react-native';
 import { ContactItem } from './ContactItem';
 import { firechat } from './lib/Firechat';
 import { Room, User, Message } from './Models';
@@ -11,9 +11,8 @@ import Chat from './Chat';
 export default () => {
 
     const [state, dispatch] = useStateValue();
-
+    const [page, setPage] = useState(0) 
     const [rooms, setRooms] = useState<Room[]>([])
-    const [currentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
         const unsubscribe = firechat.getOnRooms((rooms) => {
@@ -43,18 +42,13 @@ export default () => {
 
     return (
 
-        <View flex>
-            <PageControl
-                containerStyle={[styles.pageControl, styles.absoluteContainer]}
-                numOfPages={2}
-                currentPage={currentPage}
-                color={Colors.dark10}
-                size={15}
-            />
-            <Carousel onChangePage={x => setCurrentPage(x)} containerStyle={{ flex: 1 }} >
-                <>
+        <>
+            <StatusBar translucent backgroundColor={Colors.rgba("#000000",0)} barStyle='dark-content' />
+            <Carousel containerStyle={{ flex: 1, backgroundColor: Colors.yellow80 }} onChangePage={x => setPage(x)}>
+                <View bg-green80 flex>
                     <Modal.TopBar
                         title='Nearby me'
+                        includeStatusBar={true}
                     />
                     <FlatList
                         data={targetList}
@@ -63,10 +57,11 @@ export default () => {
                         }}
                         keyExtractor={(item, index) => `${item.id}-${index}`}
                     />
-                </>
-                <>
+                </View>
+                <View bg-blue80 flex>
                     <Modal.TopBar
                         title='Conversations'
+                        includeStatusBar={true}
                     />
                     <FlatList
                         data={rooms}
@@ -75,10 +70,10 @@ export default () => {
                         }}
                         keyExtractor={(item, index) => `${item.id}-${index}`}
                     />
-                </>
+                </View>
             </Carousel>
-            {state.room?.id && <Chat/>}
-        </View>
+            {state.room?.id && <Modal visible={!!state.room?.id}><Chat/></Modal>}
+        </>
 
     );
 }

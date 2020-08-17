@@ -17,7 +17,7 @@ export type MainState = {
 };
 
 export const initialState: MainState = {
-    screen: Screen.Login
+    screen: Screen.Room
 };
 
 export enum ActionType {

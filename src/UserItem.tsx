@@ -12,13 +12,13 @@ export const UserItem = ({ user }: UserItemProps) => {
         <ListItem
             onPress={() => { }}
         >
-            <ListItem.Part left>
+            <ListItem.Part left bg-green80>
                 <Avatar
                     label={AvatarHelper.getInitials(user.name ?? "Alexandre Giordanelli")}
                     badgeProps={{ backgroundColor: Colors.green30 }}
                     containerStyle={{ marginHorizontal: 18 }} />
             </ListItem.Part>
-            <ListItem.Part middle containerStyle={styles.border}>
+            <ListItem.Part middle containerStyle={styles.border} bg-green80 >
                 <Text text70>Alexandre Giordanelli</Text>
                 <Text text90 color={Colors.dark50}>{user.distance} m</Text>
             </ListItem.Part>

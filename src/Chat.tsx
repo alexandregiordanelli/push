@@ -138,7 +138,7 @@ export default () => {
                 inverted={true}
                 // contentInsetAdjustmentBehavior='scrollableAxes'
                 onEndReached={onLoadEarlier}
-                // onEndReachedThreshold={0.5}
+                onEndReachedThreshold={0.4}
                 // contentInset={{ bottom: offset }}
                 keyboardDismissMode='interactive'
                 renderSectionFooter={({ section }) => {
