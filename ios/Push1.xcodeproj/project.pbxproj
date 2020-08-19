@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* PushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PushTests.m */; };
+		00E356F31AD99517003FC87E /* Push1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Push1Tests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* PushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PushTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* Push1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Push1Tests.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8879543E99197E0AA4A97658 /* libPods-Push.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0C2C0D2EBCCDA90BD7281F /* libPods-Push.a */; };
-		A0788F69E20FFB650DFC7C08 /* libPods-Push-PushTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A951FD03D9F43B7916B580E5 /* libPods-Push-PushTests.a */; };
+		8879543E99197E0AA4A97658 /* libPods-Push1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0C2C0D2EBCCDA90BD7281F /* libPods-Push1.a */; };
+		A0788F69E20FFB650DFC7C08 /* libPods-Push1-Push1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A951FD03D9F43B7916B580E5 /* libPods-Push1-Push1Tests.a */; };
 		AC80A88924E60DBB006A0FC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC80A88824E60DBB006A0FC4 /* GoogleService-Info.plist */; };
 		AC97CC9E24EC9F18000B7618 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC97CC9D24EC9F17000B7618 /* AppCenter-Config.plist */; };
 /* End PBXBuildFile section */
@@ -28,39 +28,39 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Push;
+			remoteInfo = Push1;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "Push-tvOS";
+			remoteInfo = "Push1-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* PushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* Push1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Push1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* PushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Push.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Push.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Push/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Push/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Push/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Push/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Push/main.m; sourceTree = "<group>"; };
-		1A0EC7E2DA040639FEE6E0A9 /* Pods-Push-PushTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push-PushTests.release.xcconfig"; path = "Target Support Files/Pods-Push-PushTests/Pods-Push-PushTests.release.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* Push-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Push-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* Push-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Push-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E1C203962D57A8051C306FF /* Pods-Push.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push.release.xcconfig"; path = "Target Support Files/Pods-Push/Pods-Push.release.xcconfig"; sourceTree = "<group>"; };
-		3C0C2C0D2EBCCDA90BD7281F /* libPods-Push.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Push.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Push/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83DB7DA2C2930A4AAC4C4997 /* Pods-Push.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push.debug.xcconfig"; path = "Target Support Files/Pods-Push/Pods-Push.debug.xcconfig"; sourceTree = "<group>"; };
-		A951FD03D9F43B7916B580E5 /* libPods-Push-PushTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Push-PushTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F21AD99517003FC87E /* Push1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Push1Tests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Push1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Push1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Push1/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Push1/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Push1/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Push1/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Push1/main.m; sourceTree = "<group>"; };
+		1A0EC7E2DA040639FEE6E0A9 /* Pods-Push1-Push1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push1-Push1Tests.release.xcconfig"; path = "Target Support Files/Pods-Push1-Push1Tests/Pods-Push1-Push1Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* Push1-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Push1-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* Push1-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Push1-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1C203962D57A8051C306FF /* Pods-Push1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push1.release.xcconfig"; path = "Target Support Files/Pods-Push1/Pods-Push1.release.xcconfig"; sourceTree = "<group>"; };
+		3C0C2C0D2EBCCDA90BD7281F /* libPods-Push1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Push1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Push1/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83DB7DA2C2930A4AAC4C4997 /* Pods-Push1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push1.debug.xcconfig"; path = "Target Support Files/Pods-Push1/Pods-Push1.debug.xcconfig"; sourceTree = "<group>"; };
+		A951FD03D9F43B7916B580E5 /* libPods-Push1-Push1Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Push1-Push1Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC80A88824E60DBB006A0FC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC97CC9D24EC9F17000B7618 /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
-		D8EF9E8164F04B5F0EF15AC0 /* Pods-Push-PushTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push-PushTests.debug.xcconfig"; path = "Target Support Files/Pods-Push-PushTests/Pods-Push-PushTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8EF9E8164F04B5F0EF15AC0 /* Pods-Push1-Push1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push1-Push1Tests.debug.xcconfig"; path = "Target Support Files/Pods-Push1-Push1Tests/Pods-Push1-Push1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0788F69E20FFB650DFC7C08 /* libPods-Push-PushTests.a in Frameworks */,
+				A0788F69E20FFB650DFC7C08 /* libPods-Push1-Push1Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8879543E99197E0AA4A97658 /* libPods-Push.a in Frameworks */,
+				8879543E99197E0AA4A97658 /* libPods-Push1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +99,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* PushTests */ = {
+		00E356EF1AD99517003FC87E /* Push1Tests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* PushTests.m */,
+				00E356F21AD99517003FC87E /* Push1Tests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = PushTests;
+			path = Push1Tests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -116,7 +116,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Push */ = {
+		13B07FAE1A68108700A75B9A /* Push1 */ = {
 			isa = PBXGroup;
 			children = (
 				AC97CC9D24EC9F17000B7618 /* AppCenter-Config.plist */,
@@ -129,7 +129,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Push;
+			name = Push1;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -137,8 +137,8 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				3C0C2C0D2EBCCDA90BD7281F /* libPods-Push.a */,
-				A951FD03D9F43B7916B580E5 /* libPods-Push-PushTests.a */,
+				3C0C2C0D2EBCCDA90BD7281F /* libPods-Push1.a */,
+				A951FD03D9F43B7916B580E5 /* libPods-Push1-Push1Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,9 +153,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* Push */,
+				13B07FAE1A68108700A75B9A /* Push1 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* PushTests */,
+				00E356EF1AD99517003FC87E /* Push1Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BB4C4D0A46B27201A7A0D44E /* Pods */,
@@ -168,10 +168,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Push.app */,
-				00E356EE1AD99517003FC87E /* PushTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* Push-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* Push-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Push1.app */,
+				00E356EE1AD99517003FC87E /* Push1Tests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* Push1-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* Push1-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,10 +179,10 @@
 		BB4C4D0A46B27201A7A0D44E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				83DB7DA2C2930A4AAC4C4997 /* Pods-Push.debug.xcconfig */,
-				2E1C203962D57A8051C306FF /* Pods-Push.release.xcconfig */,
-				D8EF9E8164F04B5F0EF15AC0 /* Pods-Push-PushTests.debug.xcconfig */,
-				1A0EC7E2DA040639FEE6E0A9 /* Pods-Push-PushTests.release.xcconfig */,
+				83DB7DA2C2930A4AAC4C4997 /* Pods-Push1.debug.xcconfig */,
+				2E1C203962D57A8051C306FF /* Pods-Push1.release.xcconfig */,
+				D8EF9E8164F04B5F0EF15AC0 /* Pods-Push1-Push1Tests.debug.xcconfig */,
+				1A0EC7E2DA040639FEE6E0A9 /* Pods-Push1-Push1Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -190,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* PushTests */ = {
+		00E356ED1AD99517003FC87E /* Push1Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PushTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Push1Tests" */;
 			buildPhases = (
 				A26A3B77DB6C3CD83B4C8E17 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -205,14 +205,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = PushTests;
-			productName = PushTests;
-			productReference = 00E356EE1AD99517003FC87E /* PushTests.xctest */;
+			name = Push1Tests;
+			productName = Push1Tests;
+			productReference = 00E356EE1AD99517003FC87E /* Push1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Push */ = {
+		13B07F861A680F5B00A75B9A /* Push1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Push" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Push1" */;
 			buildPhases = (
 				451F690BF5A541646D97B99F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -227,14 +227,14 @@
 			);
 			dependencies = (
 			);
-			name = Push;
-			productName = Push;
-			productReference = 13B07F961A680F5B00A75B9A /* Push.app */;
+			name = Push1;
+			productName = Push1;
+			productReference = 13B07F961A680F5B00A75B9A /* Push1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* Push-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* Push1-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push1-tvOS" */;
 			buildPhases = (
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
@@ -246,14 +246,14 @@
 			);
 			dependencies = (
 			);
-			name = "Push-tvOS";
-			productName = "Push-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* Push-tvOS.app */;
+			name = "Push1-tvOS";
+			productName = "Push1-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* Push1-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* Push-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* Push1-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push1-tvOSTests" */;
 			buildPhases = (
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
@@ -264,9 +264,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "Push-tvOSTests";
-			productName = "Push-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* Push-tvOSTests.xctest */;
+			name = "Push1-tvOSTests";
+			productName = "Push1-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* Push1-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +295,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Push" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Push1" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -308,10 +308,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Push */,
-				00E356ED1AD99517003FC87E /* PushTests */,
-				2D02E47A1E0B4A5D006451C7 /* Push-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* Push-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* Push1 */,
+				00E356ED1AD99517003FC87E /* Push1Tests */,
+				2D02E47A1E0B4A5D006451C7 /* Push1-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* Push1-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -406,7 +406,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Push-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Push1-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -419,7 +419,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Push-PushTests/Pods-Push-PushTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Push1-Push1Tests/Pods-Push1-Push1Tests-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
 			);
@@ -430,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Push-PushTests/Pods-Push-PushTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Push1-Push1Tests/Pods-Push1-Push1Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A081056980C9BAAEC3834125 /* [CP] Copy Pods Resources */ = {
@@ -439,7 +439,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Push/Pods-Push-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Push1/Pods-Push1-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
 			);
@@ -450,7 +450,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Push/Pods-Push-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Push1/Pods-Push1-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A26A3B77DB6C3CD83B4C8E17 /* [CP] Check Pods Manifest.lock */ = {
@@ -468,7 +468,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Push-PushTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Push1-Push1Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -520,7 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* PushTests.m in Sources */,
+				00E356F31AD99517003FC87E /* Push1Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* PushTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* Push1Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,12 +555,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Push */;
+			target = 13B07F861A680F5B00A75B9A /* Push1 */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* Push-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* Push1-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -568,14 +568,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8EF9E8164F04B5F0EF15AC0 /* Pods-Push-PushTests.debug.xcconfig */;
+			baseConfigurationReference = D8EF9E8164F04B5F0EF15AC0 /* Pods-Push1-Push1Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PushTests/Info.plist;
+				INFOPLIST_FILE = Push1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -585,17 +585,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push.app/Push";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push1.app/Push1";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A0EC7E2DA040639FEE6E0A9 /* Pods-Push-PushTests.release.xcconfig */;
+			baseConfigurationReference = 1A0EC7E2DA040639FEE6E0A9 /* Pods-Push1-Push1Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = PushTests/Info.plist;
+				INFOPLIST_FILE = Push1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -605,19 +605,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push.app/Push";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push1.app/Push1";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83DB7DA2C2930A4AAC4C4997 /* Pods-Push.debug.xcconfig */;
+			baseConfigurationReference = 83DB7DA2C2930A4AAC4C4997 /* Pods-Push1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Push/Info.plist;
+				INFOPLIST_FILE = Push1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -625,7 +625,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.push;
-				PRODUCT_NAME = Push;
+				PRODUCT_NAME = Push1;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -634,12 +634,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E1C203962D57A8051C306FF /* Pods-Push.release.xcconfig */;
+			baseConfigurationReference = 2E1C203962D57A8051C306FF /* Pods-Push1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = Push/Info.plist;
+				INFOPLIST_FILE = Push1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -647,7 +647,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.push;
-				PRODUCT_NAME = Push;
+				PRODUCT_NAME = Push1;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -665,14 +665,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Push-tvOS/Info.plist";
+				INFOPLIST_FILE = "Push1-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push1-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -692,14 +692,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Push-tvOS/Info.plist";
+				INFOPLIST_FILE = "Push1-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push1-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -718,17 +718,17 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Push-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "Push1-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push1-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push-tvOS.app/Push-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push1-tvOS.app/Push1-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -744,17 +744,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Push-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "Push1-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Push1-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push-tvOS.app/Push-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push1-tvOS.app/Push1-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -875,7 +875,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PushTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Push1Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -884,7 +884,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Push" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Push1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -893,7 +893,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push1-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -902,7 +902,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Push1-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -911,7 +911,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Push" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Push1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

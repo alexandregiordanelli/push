@@ -711,28 +711,19 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - abseil
     - AppCenter
     - AppCenterReactNativeShared
+    - boost-for-react-native
     - BoringSSL-GRPC
+    - CocoaAsyncSocket
+    - CocoaLibEvent
     - Firebase
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
-    - GoogleDataTransport
-    - GoogleUtilities
-    - "gRPC-C++"
-    - gRPC-Core
-    - GTMSessionFetcher
-    - leveldb-library
-    - nanopb
-    - PromisesObjC
-  trunk:
-    - boost-for-react-native
-    - CocoaAsyncSocket
-    - CocoaLibEvent
     - Flipper
     - Flipper-DoubleConversion
     - Flipper-Folly
@@ -740,7 +731,15 @@ SPEC REPOS:
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
+    - GoogleDataTransport
+    - GoogleUtilities
+    - "gRPC-C++"
+    - gRPC-Core
+    - GTMSessionFetcher
+    - leveldb-library
+    - nanopb
     - OpenSSL-Universal
+    - PromisesObjC
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -896,6 +895,6 @@ SPEC CHECKSUMS:
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 5458cd741902fdb2fa13275330a9a946f24aad75
+PODFILE CHECKSUM: 0f88c64144ab609bd01085deee7d93525092885c
 
 COCOAPODS: 1.10.0.beta.2
