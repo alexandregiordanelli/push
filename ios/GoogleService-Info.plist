@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>285163780198-7hf4hg7n1mhjop3n43vruqplpe15e629.apps.googleusercontent.com</string>
+	<string>285163780198-t47080le0pp6phv89kl6smodtf0dglmo.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.285163780198-7hf4hg7n1mhjop3n43vruqplpe15e629</string>
+	<string>com.googleusercontent.apps.285163780198-t47080le0pp6phv89kl6smodtf0dglmo</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>285163780198-0j3fs7fuhbl4djl2amq2gle5llevjkoi.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDIA9nipESrPfEB2HkLTgVaQrzuio4CVv0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.push</string>
+	<string>giordanelli.push</string>
 	<key>PROJECT_ID</key>
 	<string>push09</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:285163780198:ios:ac872069d1b87b74a715a7</string>
+	<string>1:285163780198:ios:c28578c75aec771ea715a7</string>
 	<key>DATABASE_URL</key>
 	<string>https://push09.firebaseio.com</string>
 </dict>
