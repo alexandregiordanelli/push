@@ -1,6 +1,7 @@
 import { FirebaseFirestoreTypes } from '@react-native-firebase/firestore';
+import ngeohash from 'ngeohash'
 
-const g_GEOHASH_PRECISION = 10
+const g_GEOHASH_PRECISION = 13
 const g_BASE32 = "0123456789bcdefghjkmnpqrstuvwxyz"
 const g_EARTH_MERI_CIRCUMFERENCE = 40007860
 const g_METERS_PER_DEGREE_LATITUDE = 110574
@@ -174,18 +175,26 @@ export interface GeoDocument {
 
 const getDocumentsNearby = <T extends GeoDocument>(ref: FirebaseFirestoreTypes.CollectionReference, center: number[], radiusInMeters: number) => {
     let docs: T[] = []
+    const docsRejects: T[] = []
     const promises: Promise<boolean>[] = []
     getQueriesForDocumentsAround(ref, center, radiusInMeters).forEach(query => {
         promises.push(query.get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 let data = doc.data() as T
-                data.distance = Math.round(1000 * distance(center, [data.location.latitude,data.location.longitude]))
+                const location = ngeohash.decode(data.geohash)
+                data.distance = Math.round(1000 * distance(center, [location.latitude, location.longitude]))
                 data.id = doc.id
                 if(data.distance < radiusInMeters)
                     docs.push(data)
+                else
+                    docsRejects.push(data)
             })
+            console.log(docs.length)
+            console.log(docsRejects.length)
+            console.log(sortByDistance(docsRejects)[0])
             return true
         }))
+        
     })
     return Promise.all(promises).then(e => {
         return sortByDistance(removeDuplicates(docs, "id")) as T[]

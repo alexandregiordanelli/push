@@ -6,10 +6,11 @@ import { Button } from "react-native-ui-lib";
 import { firechat } from "./lib/Firechat";
 import { ActionType, Screen, User } from "./Models";
 import { StateProvider, useStateValue } from "./State";
-
+import ngeohash from 'ngeohash'
 import auth from '@react-native-firebase/auth';
 import Login from "./Login";
 import Geolocation from '@react-native-community/geolocation';
+import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
 
 
 const App = () => {
@@ -23,10 +24,12 @@ const App = () => {
         //     })
         // });
 
-        firechat.usersRef!.doc("sZYgdXOufvYGae3WaXVy95aE2zl1").get().then(user => {
+        firechat.usersRef!.doc("03jFAXqSz8Qzdifpqyu2MGxHRGo1").get().then(user => {
+            const userData = user.data() as User
             firechat.user = {
-                ...user.data() as User,
-               id: user.id
+                ...userData,
+                location: ngeohash.decode(userData.geohash) as FirebaseFirestoreTypes.GeoPoint,
+                id: user.id
             }
 
             dispatch({

@@ -29,7 +29,7 @@ export default () => {
     const [msgText, setMsgText] = useState('')
 
     useEffect(() => {
-        firechat.getUsersNearby(10000).then(userList => {
+        firechat.getUsersNearby(4.6 * 1000).then(userList => {
             setTargetList(userList.filter(x => x.id != firechat.user?.id))
         })
     }, [])
@@ -47,6 +47,7 @@ export default () => {
             <Carousel containerStyle={{ flex: 1, backgroundColor: Colors.yellow80 }} onChangePage={x => setPage(x)}>
                 <View bg-green80 flex>
                     <Modal.TopBar
+                    
                         title='Nearby me'
                         includeStatusBar={true}
                     />
